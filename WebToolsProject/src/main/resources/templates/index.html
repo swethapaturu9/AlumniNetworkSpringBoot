@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>NUNetworking</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <h2>NU Networking</h2>
+    </div>
+  </div>
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <h3><a th:href="@{/registerStudent}" class="btn btn-primary btn-lg btn-block">Register as Student</a></h3>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <h3><a th:href="@{/registerAlumni}" class="btn btn-primary btn-lg btn-block">Register as Alumna</a></h3>
+    </div>
+  </div>
+  <div class="row justify-content-center ">
+    <div class="col-md-6 text-center">
+      <h3><a th:href="@{/login}" class="btn btn-primary btn-lg btn-block">Login</a></h3>
+    </div>
+  </div>
+  </div>
+</div>
+</body>
+</html>

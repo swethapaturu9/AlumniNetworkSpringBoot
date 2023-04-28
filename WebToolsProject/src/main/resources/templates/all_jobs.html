@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>NUNetworking</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<style>
+.error-message {
+	font-weight: 500;
+	color: red;
+	font-style: italic;
+}
+</style>
+<body>
+
+	<div class="text-center">
+		<h2>NU Networking</h2>
+	</div>
+	<div>
+		<h1 class="mb-4">Job List</h1>
+		<div th:if="${studentUser}" class="mb-4">
+			<ul class="list-unstyled">
+				<li th:each="job : ${jobs}" class="mb-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">
+								<strong>Company:</strong> <span th:text="${job.company}"></span>
+							</h5>
+							<h6 class="card-subtitle mb-2 text-muted">
+								<strong>Job Description:</strong> <span
+									th:text="${job.jobDescription}"></span>
+							</h6>
+							<p class="card-text">
+								<strong>Posted By:</strong> <span
+									th:text="${job.postedBy.alumni.fName}"></span>
+							</p>
+							<p class="card-text">
+								<strong>Skills Required:</strong>
+							</p>
+							<ul class="list-unstyled">
+								<li th:each="skill : ${job.skills_required}" class="ml-3"
+									th:text="${skill}"></li>
+							</ul>
+							<div th:if="${studentUserDao.hasAppliedforJob(studentUser,job)}">
+								<span class="error-message">You have already applied for
+									this job.</span>
+							</div>
+							<div
+								th:if="${not studentUserDao.hasAppliedforJob(studentUser, job)}">
+								<form th:action="@{/applyJob(jobId=${job.job_id})}"
+									method="post">
+									<button type="submit" class="btn btn-primary">Apply</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div th:if="${studentUser == null}" class="mb-4">
+			<ul class="list-unstyled">
+				<li th:each="job : ${jobs}" class="mb-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">
+								<strong>Company:</strong> <span th:text="${job.company}"></span>
+							</h5>
+							<h6 class="card-subtitle mb-2 text-muted">
+								<strong>Job Description:</strong> <span
+									th:text="${job.jobDescription}"></span>
+							</h6>
+							<p class="card-text">
+								<strong>Posted By:</strong> <span
+									th:text="${job.postedBy.alumni.fName}"></span>
+							</p>
+							<p class="card-text">
+								<strong>Skills Required:</strong>
+							</p>
+							<ul class="list-unstyled">
+								<li th:each="skill : ${job.skills_required}" class="ml-3"
+									th:text="${skill}"></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<form th:action="@{/home}" method="get" class="mt-4">
+			<button type="submit" class="btn btn-secondary">Back</button>
+		</form>
+
+	</div>
+</body>
+</html>

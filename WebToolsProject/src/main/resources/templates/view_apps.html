@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>NUNetworking</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="text-center">
+		<h2>NU Networking</h2>
+	</div>
+	<div>
+		<h1>Applications for jobs your posted:</h1>
+		<div th:each="job : ${jobs}">
+			<p>
+				Company: <span th:text="${job.company}"></span>
+			</p>
+			<p>
+				Description: <span th:text="${job.jobDescription}"></span>
+			</p>
+
+			<!-- Iterate over each student who applied to the job -->
+			<ul>
+				<li th:each="studentUser : ${job.appliedStudents}">
+				    <span th:text="${studentUser.student.fName}"></span>
+				    <a th:href="@{/downloadResume/{filename}(filename=${studentUser.resumeName})}" target="_blank">View resume</a>
+				    <a th:href="@{/viewStudent(Id=${studentUser.id})}"> View Full Profile</a>
+			</ul>
+			<form th:action="@{/deleteJob(jobId=${job.job_id})}" method="post">
+						<button type="submit">Positions Filled</button>
+		    </form>
+
+			<hr>
+		</div>
+		</div> 
+		<div>
+         <form th:action="@{/home}" method="get">
+                <input type="submit" value="Back"/>
+            </form>
+     
+        </div>
+</body>
+</html>

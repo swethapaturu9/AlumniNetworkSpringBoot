@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <title>NUNetworking</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+   <h1 class="text-center">NU Networking</h1>
+
+
+    <div class="container">
+     
+         <h2>Welcome, <span th:text="${alumniUser.alumni.fName}"></span>!</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <a th:href="@{/PostJob}" class="btn btn-secondary btn-lg btn-block">Post Job</a>
+            </div>
+            <div class="col-md-4">
+                <a th:href="@{/ViewApplications(Id=${alumniUser.id})}" class="btn btn-secondary btn-lg btn-block">View Applications</a>
+            </div>
+            <div class="col-md-4">
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" value="Logout" class="btn btn-danger btn-lg btn-block"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
