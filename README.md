@@ -14,7 +14,7 @@ Referrals: Alumni can post referrals that they are willing to provide to student
 * Client Side - HTML, CSS , JavaScript
 * Server Side - Spring-Boot, Hibernate, Thymeleaf 
 * Database - MySQL
-* Server - Apacge Tomcat 
+* Server - Apache Tomcat 
 
 <h3>  Users and Functionalities </h3>
 
