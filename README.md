@@ -1,5 +1,5 @@
 
-# University Hiring SpringBoot Application
+# University Hiring Spring-Boot Application
 
 
 This is a web application that allows Northeastern University students to connect with alumni. The application has the following features:
