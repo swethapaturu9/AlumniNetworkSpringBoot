@@ -11,7 +11,7 @@ Referrals: Alumni can post referrals that they are willing to provide to student
 <h3> Technical Stack </h3>
 
 
-* Client Side - HTML, CSS , JavaScript
+* Client Side - HTML, CSS , JavaScript, BootStrap
 * Server Side - Spring-Boot, Hibernate, Thymeleaf 
 * Database - MySQL
 * Server - Apache Tomcat 
