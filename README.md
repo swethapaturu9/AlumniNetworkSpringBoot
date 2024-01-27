@@ -29,4 +29,6 @@ Referrals: Alumni can post referrals that they are willing to provide to student
      * Posts a job or a referral. Views profile of students who have applied.
      * Deletes a job posting once its filled. 
      
-  
+## Database Schema Diagram
+
+![Database Schema](https://github.com/swethapaturu9/AlumniNetworkSpringBoot/blob/main/DBHiringPortal.png)
