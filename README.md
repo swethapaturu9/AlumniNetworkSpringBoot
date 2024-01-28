@@ -1,5 +1,5 @@
 
-# AlumniNetworkSpringBootApplication
+# University Hiring Spring-Boot Application
 
 
 This is a web application that allows Northeastern University students to connect with alumni. The application has the following features:
@@ -11,7 +11,7 @@ Referrals: Alumni can post referrals that they are willing to provide to student
 <h3> Technical Stack </h3>
 
 
-* Client Side - HTML, CSS , JavaScript
+* Client Side - HTML, CSS , JavaScript, BootStrap
 * Server Side - Spring-Boot, Hibernate, Thymeleaf 
 * Database - MySQL
 * Server - Apache Tomcat 
@@ -29,4 +29,6 @@ Referrals: Alumni can post referrals that they are willing to provide to student
      * Posts a job or a referral. Views profile of students who have applied.
      * Deletes a job posting once its filled. 
      
-  
+## Database Schema Diagram
+
+![Database Schema](https://github.com/swethapaturu9/AlumniNetworkSpringBoot/blob/main/DBHiringPortal.png)
